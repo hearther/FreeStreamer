@@ -99,6 +99,8 @@ public:
     bool strictContentTypeChecking();
     float bitrate();
     
+    
+    UInt64 bytesReceived();
     UInt64 contentLength();
     int playbackDataCount();
     int audioQueueNumberOfBuffersInUse();

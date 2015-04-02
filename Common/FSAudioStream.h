@@ -397,6 +397,10 @@ NSString*             freeStreamerReleaseVersion();
  */
 @property (nonatomic,readonly) float bitRate;
 /**
+ * This property is received bytes
+ */
+@property (nonatomic,readonly) UInt64 bytesReceived;
+/**
  * The property is true if the stream is continuous (no known duration).
  */
 @property (nonatomic,readonly) BOOL continuous;

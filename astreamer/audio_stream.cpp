@@ -1146,6 +1146,11 @@ float Audio_Stream::bitrate()
     return sum / (float)kAudioStreamBitrateBufferSize;
 }
     
+UInt64 Audio_Stream::bytesReceived()
+{
+   return m_bytesReceived;
+}
+    
 void Audio_Stream::watchdogTimerCallback(CFRunLoopTimerRef timer, void *info)
 {
     Audio_Stream *THIS = (Audio_Stream *)info;

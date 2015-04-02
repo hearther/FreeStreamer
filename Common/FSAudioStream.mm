@@ -610,6 +610,10 @@ public:
 {
     return _audioStream->bitrate();
 }
+- (UInt64)bytesReceived
+{
+    return _audioStream->bytesReceived();
+}
 
 - (FSStreamConfiguration *)configuration
 {
@@ -1423,6 +1427,13 @@ public:
     NSAssert([NSThread isMainThread], @"FSAudioStream.bitRate needs to be called in the main thread");
     
     return _private.bitRate;
+}
+
+- (UInt64)bytesReceived
+{
+    NSAssert([NSThread isMainThread], @"FSAudioStream.bytesReceived needs to be called in the main thread");
+    
+    return _private.bytesReceived;
 }
 
 - (BOOL)continuous
