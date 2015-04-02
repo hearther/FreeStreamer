@@ -950,6 +950,10 @@ void Audio_Stream::streamEndEncountered()
         
         return;
     }
+    else if (contentLength () != m_bytesReceived) {
+        closeAndSignalError(AS_ERR_NETWORK, CFSTR("Stream ended abruptly"));
+        return;
+    }
     
     setState(END_OF_FILE);
     
